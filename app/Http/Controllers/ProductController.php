@@ -30,4 +30,5 @@ class ProductController extends Controller
             "product" => $phone[$id] ?? "khong co "
         ]);
     }
+    
 }

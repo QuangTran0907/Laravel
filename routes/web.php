@@ -9,25 +9,31 @@ use App\Http\Controllers\FoodsController;
 
 
 
-Route:: get("products",[
-    ProductController::class,"index"
-])->name('products');
+// Route:: get("products",[
+//     ProductController::class,"index"
+// ])->name('products');
 
-Route:: get("products/{id}",[
-    ProductController::class,"detail"
+// Route:: get("products/{id}",[
+//     ProductController::class,"detail"
     
-])->where('id','[0-9a-zA-Z]+');
+// ])->where('id','[0-9a-zA-Z]+');
 
 
 
-Route::get('/',[PagesController::class, 'index']);
-Route::get('/about',[PagesController::class, 'about']);
-Route::get('/postIndex',[PostController::class, 'index']);
+// Route::get('/',[PagesController::class, 'index']);
+// Route::get('/about',[PagesController::class, 'about']);
+// Route::get('/postIndex',[PostController::class, 'index']);
+
+
 Route::resource('/foods',FoodsController::class);
+Route::resource('/products',ProductController::class);
 
 
 
 
+Route::get("/web",function(){
+    return view( "web.index");
+});
 
 // Route::get("/users",function(){
 //     return  "This is user page ";

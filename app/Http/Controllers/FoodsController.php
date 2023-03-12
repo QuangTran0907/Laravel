@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Food;
+use \App\Models\Category;
+use \App\Rules\UpperCase;
+
 
 class FoodsController extends Controller
 {
@@ -14,26 +17,40 @@ class FoodsController extends Controller
         ]);
     }
     public function create(){
+        $categories = Category::all();
         
-        return view('foods.create');
+        return view('foods.create')->with('categories',$categories);
     }
     public function store(Request $request){
-        $food = Food::create(['name'=>$request->input('name'),'sl'=>$request->input('sl'),'description'=>$request->input('description')]);
+        $request->validate([
+            'name'=> new UpperCase,
+            'sl'=> 'required|integer|min:0',
+            'category_id'=> 'required',
+            'description'=> 'required'
+
+        ]);
+        
+
+        $food = Food::create(['name'=>$request->input('name'),
+        'sl'=>$request->input('sl'),
+        'description'=>$request->input('description'),
+        'category_id'=>$request->input('category_id')]);
         $food->save();
         return redirect()->action([FoodsController::class, 'index']);
     }
     public function edit($id){
         $food = Food::find($id);
-        return view('foods.edit',[
-            'food'=>$food
-        ]);
+        $category = Category::find($food->category_id);
+        $categories = Category::all();
+        $food->Category = $category;
+        return view('foods.edit',compact('food','categories'));
     }
 
     public function update(Request$request, $id){
        
         Food::where('id',$id)->update(['name'=>$request->input('name'),
         'sl'=>$request->input('sl'),
-        'description'=>$request->input('description')]);
+        'description'=>$request->input('description'),'category_id'=>$request->input('category_id')]);
         return redirect()->action([FoodsController::class, 'index']);
 
     }

@@ -96,15 +96,31 @@
             <div class="form-check col-sm-3">
             
               <div class="col-sm-10">
-                <input name="{{ $item->id }}" class="form-check-input" type="checkbox" id="gridCheck1">
+                <input name="{{ $item->id }}" class="form-check-input" type="checkbox" onclick="onCheck{{ $item->id }}()" id="gridCheck{{ $item->id }}">
                 <label class="form-check-label" for="gridCheck1">
                   {{ $item->size."------:" }}       
                 </label>            </div>
             </div>
-            <div class="col-sm-4">
-              <input type="text" name="{{ $item->id."SL" }}" class="form-control"  id="datepicker" />
+            
+
+            <div class="col-sm-4" id="demo{{ $item->id }}">
             </div>
           </div>
+          <script>
+            function onCheck{{ $item->id }}()
+            {
+              var flag = document.getElementById("gridCheck{{ $item->id }}").checked;
+              if(flag==true)
+              {
+                document.getElementById("demo{{ $item->id }}").innerHTML = '<input type="text" name="{{ $item->id."SL" }}" class="form-control"  id="datepicker" />';
+
+              }else
+              {
+                document.getElementById("demo{{ $item->id }}").innerHTML = '';
+              }
+            }
+              
+          </script>
 
           
           @endforeach

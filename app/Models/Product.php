@@ -14,8 +14,8 @@ class Product extends Model
 
     protected $fillable = ['name','color','image_path','price','description','release_year','brand_id'];
     //protected $dateFormat = 'h:m:s';
-    public function category(){
-        return $this->belongsTo(Category::class);
+    public function brand(){
+        return $this->belongsTo(Brand::class);
 
     }
     public function sizes()

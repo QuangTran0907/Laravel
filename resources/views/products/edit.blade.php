@@ -104,6 +104,14 @@
       <button type="submit" class="btn btn-primary">Thêm mới</button>
     </div>
   </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <a href="/products/edit/add_image/{{ $product->id }}">
+        <button type="button" class="btn btn-primary">Thêm ảnh</button>
+      </a>
+    
+    </div>
+  </div>
 </form>
 
 

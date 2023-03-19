@@ -6,6 +6,8 @@ use App\Models\Brand;
 use App\Models\Size;
 use App\Models\Size_Product;
 use App\Models\Product;
+use App\Models\Media;
+
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -99,6 +101,39 @@ class ProductController extends Controller
        return redirect()->action([ProductController::class, 'index']);
 
     }
+    public function add_image($id)
+    {
+        $product = Product::find($id);
+        return view('products.add_image',compact('product'));
+    }
+
+    public function save_media(Request $request,$id)
+    {
+        $product = Product::find($id);
+        for ($i=1; $i <= 4; $i++) { 
+            if($request->file('image'.$i)!=null){
+                $generatedImageName = 'image'.time()+$i.'-'
+                .$request->name.'.'
+                .$request->file('image'.$i)->extension();
+                $arr[$i] = $generatedImageName;
+                Media::create(['image_path'=>$generatedImageName,
+                                'product_id'=>$product->id])->save();
+                $request->file('image'.$i)->move(public_path('images'), $generatedImageName);
+            }
+
+            
+        }  
+          
+        return redirect()->action([ProductController::class, 'index']);
+
+    }
+
+    public function web_index()
+    {
+        $products = Product::all();
+        return view('web.index',compact('products'));
+    }
+
  
     
 }

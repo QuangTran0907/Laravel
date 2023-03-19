@@ -13,4 +13,12 @@ class Size_Product extends Model
     public $timeStamps = true;
 
     protected $fillable = ['size_id','product_id','amount'];
+    public function Size()
+    {
+        return $this->belongsTo(Size::class);
+    }
+    public function Product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

@@ -3,17 +3,17 @@
   <div class="wrap">
        <div class="col_1_of_footer-top span_1_of_footer-top">
     <ul class="f_list">
-      <li><img src="img/f_icon.png" alt=""/><span class="delivery">Free delivery on all orders over £100*</span></li>
+      <li><img src="{{asset('img/f_icon.png')}}" alt=""/><span class="delivery">Free delivery on all orders over £100*</span></li>
     </ul>
   </div>
   <div class="col_1_of_footer-top span_1_of_footer-top">
    <ul class="f_list">
-      <li><img src="img/f_icon1.png" alt=""/><span class="delivery">Customer Service :<span class="orange"> (800) 000-2587 (freephone)</span></span></li>
+      <li><img src="{{asset('img/f_icon1.png')}}" alt=""/><span class="delivery">Customer Service :<span class="orange"> (800) 000-2587 (freephone)</span></span></li>
     </ul>
   </div>
   <div class="col_1_of_footer-top span_1_of_footer-top">
    <ul class="f_list">
-      <li><img src="img/f_icon2.png" alt=""/><span class="delivery">Fast delivery & free returns</span></li>
+      <li><img src="{{asset('img/f_icon2.png')}}" alt=""/><span class="delivery">Fast delivery & free returns</span></li>
     </ul>
   </div>
  <div class="clear"></div>
@@ -27,12 +27,12 @@
      <dt><a href="#"><span>Please Select a Country</span></a></dt>
      <dd>
          <ul>
-             <li><a href="#">Australia<img class="flag" src="img/as.png" alt="" /><span class="value">AS</span></a></li>
-             <li><a href="#">Sri Lanka<img class="flag" src="img/srl.png" alt="" /><span class="value">SL</span></a></li>
-             <li><a href="#">Newziland<img class="flag" src="img/nz.png" alt="" /><span class="value">NZ</span></a></li>
-             <li><a href="#">Pakistan<img class="flag" src="img/pk.png" alt="" /><span class="value">Pk</span></a></li>
-             <li><a href="#">United Kingdom<img class="flag" src="img/uk.png" alt="" /><span class="value">UK</span></a></li>
-             <li><a href="#">United States<img class="flag" src="img/us.png" alt="" /><span class="value">US</span></a></li>
+             <li><a href="#">Australia<img class="flag" src="{{asset('img/as.png')}}" alt="" /><span class="value">AS</span></a></li>
+             <li><a href="#">Sri Lanka<img class="flag" src="{{asset('img/srl.png')}}" alt="" /><span class="value">SL</span></a></li>
+             <li><a href="#">Newziland<img class="flag" src="{{asset('img/nz.png')}}" alt="" /><span class="value">NZ</span></a></li>
+             <li><a href="#">Pakistan<img class="flag" src="{{asset('img/pk.png')}}" alt="" /><span class="value">Pk</span></a></li>
+             <li><a href="#">United Kingdom<img class="flag" src="{{asset('img/uk.png')}}" alt="" /><span class="value">UK</span></a></li>
+             <li><a href="#">United States<img class="flag" src="{{asset('img/us.png')}}" alt="" /><span class="value">US</span></a></li>
          </ul>
       </dd>
       </dl>

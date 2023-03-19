@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\AppController;
+use App\Http\Controllers\WebController;
 
 
 
@@ -32,7 +32,9 @@ Route::post('products/save_media/{id}',[ProductController::class, 'save_media'])
 
 
 
-Route::get('/homepage',[AppController::class, 'web_index']);
+Route::get('/homepage',[WebController::class, 'web_index']);
+Route::get('/homepage/{id}',[WebController::class, 'detail']);
+
 
 
 

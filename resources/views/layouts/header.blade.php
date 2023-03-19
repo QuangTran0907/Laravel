@@ -1,7 +1,7 @@
 <div class="header-top">
   <div class="wrap"> 
    <div class="logo">
-     <a href="index.html"><img src="img/logo.png" alt=""/></a>
+     <a href="index.html"><img src="{{asset('img/logo.png')}}" alt=""/></a>
      </div>
      <div class="cssmenu">
       <ul>
@@ -71,7 +71,7 @@
          <div class="col1"></div>
          <div class="col1"></div>
          <div class="col1"></div>
-         <img src="img/nav_img.jpg" alt=""/>
+         <img src="{{asset('img/nav_img.jpg')}}" alt=""/>
        </div>
      </div>
      </li>
@@ -145,7 +145,7 @@
          </div>
          <div class="col1">
           <div class="h_nav">
-            <img src="img/nav_img1.jpg" alt=""/>
+            <img src="{{asset('img/nav_img1.jpg')}}" alt=""/>
           </div>
          </div>
        </div>
@@ -201,7 +201,7 @@
          <div class="col1"></div>
          <div class="col1"></div>
          <div class="col1"></div>
-         <img src="img/nav_img2.jpg" alt=""/>
+         <img src="{{asset('img/nav_img2.jpg')}}" alt=""/>
        </div>
      </div>
      </li>

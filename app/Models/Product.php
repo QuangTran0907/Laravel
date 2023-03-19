@@ -18,6 +18,9 @@ class Product extends Model
         return $this->belongsTo(Brand::class);
 
     }
+    public function media(){
+        return $this->hasMany(Media::class);
+    }
     public function sizes()
     {
         return $this->belongsToMany(Size::class);

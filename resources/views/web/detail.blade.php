@@ -1,7 +1,7 @@
 @extends('layouts.web')
  @section('content')
  <div class="main">
-    <div class="single">
+    <div class="single">	
 		<div class="wrap">
 			<div class="rsidebar span_1_of_left">
 				<section class="sky-form">
@@ -122,12 +122,7 @@
 				<div class="labout span_1_of_a1">
 					<!-- start product_slider -->
 					<ul id="etalage">
-						<li>
-							<a href="optionallink.html">
-								<img class="etalage_thumb_image" src="{{ asset('img/t1.jpg')}}" />
-								<img class="etalage_source_image" src="{{ asset('img/t2.jpg')}}" />
-							</a>
-						</li>
+					
                         @foreach ($product->media as $item)
                         <li>
 							<img class="etalage_thumb_image" src="{{ asset("images/$item->image_path")}}" />

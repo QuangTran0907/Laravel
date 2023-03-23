@@ -25,4 +25,6 @@ class WebController extends Controller
        //dd($product->media);
         return view('web.detail',compact('product','size_product'));
     }
+
+    
 }

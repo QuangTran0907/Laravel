@@ -14,6 +14,7 @@ class ProductController extends Controller
 {
     public function index(){
         $products = Product::all();
+        
         return view('products.index',[
             'products'=>$products
         ]);
@@ -128,11 +129,7 @@ class ProductController extends Controller
 
     }
 
-    public function web_index()
-    {
-        $products = Product::all();
-        return view('web.index',compact('products'));
-    }
+   
 
  
     

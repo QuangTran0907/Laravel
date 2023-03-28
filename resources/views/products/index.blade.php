@@ -1,6 +1,6 @@
 @extends('layouts.app')
  @section('content')
- <h1 class="h3 mb-2 text-gray-800">Danh sách sản phẩm</h1>
+ <h1 class="h3 mb-2 text-gray-800">Thông tin cá nhân </h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -65,7 +65,7 @@
                                     <button type="submit" class="btn btn-danger btn-circle">
                                         <i class="fas fa-trash"></i>
                                     </button>
-                            </form>
+                            </form> 
                             
                             
                     

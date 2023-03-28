@@ -7,13 +7,14 @@ use App\Models\Size;
 use App\Models\Size_Product;
 use App\Models\Product;
 use App\Models\Media;
-
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
     public function index(){
-        $products = Product::all();
+        $products = Product::all();    
         
         return view('products.index',[
             'products'=>$products

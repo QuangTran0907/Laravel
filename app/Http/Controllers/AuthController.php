@@ -18,6 +18,7 @@ class AuthController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
+        $user->role = 0;
         $user->save();
 
         return redirect()->action([AuthController::class, 'showLogin']);
@@ -28,7 +29,7 @@ class AuthController extends Controller
     }
     public function login(Request $request)
     {
-        if(Auth::attempt(['name'=>$request->name,'password'=>$request->password])){
+        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])){
             return redirect()->action([WebController::class, 'web_index']);
 
         }

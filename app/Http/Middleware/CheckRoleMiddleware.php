@@ -8,9 +8,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Middleware\CheckLoginMiddleware as Middleware;
-
-
-class CheckLoginMiddleware
+class CheckRoleMiddleware
 {
     /**
      * Handle an incoming request.
@@ -22,11 +20,10 @@ class CheckLoginMiddleware
     public function handle(Request $request, Closure $next)
     {
         $user = User::find(\auth()->id());
-        if(Auth::check())
+        if(Auth::check() && $user->role == 1)
         {
             return $next($request);
         }
         return redirect()->action([AuthController::class, 'showLogin']);
-
     }
 }

@@ -62,33 +62,8 @@
           <input type="text" name="release_year"  value="{{ $product->release_year }}" class="form-control" name="datepicker" id="datepicker" />
         </div>
     
-        <label for="inputEmail3" class="col-sm-1 col-form-label">Size</label>
-        <div class="col-sm-4">
-    
-          <select name="size" class="custom-select ">
-            <option selected>Chọn size</option>
-            @foreach ($sizes as $item)
-            <option value="{{ $item->id }}">{{ $item->size }}</option>
-            @endforeach
-           
-          </select>
+        
       </div>
-      </div>
-      <fieldset class="form-group">
-        <div class="row">
-          <legend class="col-form-label col-sm-2 pt-0">Màu sắc</legend>
-          <div class="col-sm-10">
-            <div class="form-check ">
-              <input class="form-check-input" type="radio" name="color" id="color" value="red" checked>
-              <label class="form-check-label" for="color">
-                First radio
-              </label>
-            </div>
-          </div>
-    
-          
-        </div>
-      </fieldset>
     
 
     </div>
@@ -101,7 +76,7 @@
   </div>
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Thêm mới</button>
+      <button type="submit" class="btn btn-primary">Lưu</button>
     </div>
   </div>
   <div class="form-group row">

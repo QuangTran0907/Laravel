@@ -55,15 +55,36 @@
                         <td>{{ $item->brand_id }}</td>
                         <td>{{ $item->release_year }}</td>
                         <td>
-                            <form action="products/{{ $item->id }}" method="POST">
+                            
+                            <form action="products/{{ $item->id }}"method ="post">
                                 @csrf
                                 @method('delete')
+                                <div class="modal fade" id="delete{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Message?</h5>
+                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">Bạn có muốn xóa không.</div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Thoát</button>
+                                            <button class="btn btn-primary" type="submit">Xóa</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                                 <a href="/products/{{ $item->id }}/edit" class="btn btn-success btn-circle">
                                     <i class="fas fa-pen"></i>
                                     </a>
-        
-                                    <button type="submit" class="btn btn-danger btn-circle">
+                                    <button type="button" class="btn btn-danger btn-circle" class="dropdown-item" href="#" data-toggle="modal" data-target="#delete{{ $item->id }}">
+
+                                    
                                         <i class="fas fa-trash"></i>
+                                
                                     </button>
                             </form> 
                             
@@ -73,6 +94,7 @@
 
                     </tr>
                     @endforeach
+       
                    
                 </tbody>
             </table>

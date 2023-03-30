@@ -45,11 +45,10 @@ Route::middleware('checklogin')->group(function(){
 });
 
 
-Route::prefix('admin')->middleware('checkrole')->group(function(){
-    Route::resource('/products',ProductController::class);
-    Route::get('products/edit/add_image/{id}',[ProductController::class, 'add_image']);
-    Route::post('products/save_media/{id}',[ProductController::class, 'save_media']);
-});
+    Route::resource('/products',ProductController::class)->middleware('checkrole');
+    Route::get('/products/edit/add_image/{id}',[ProductController::class, 'add_image'])->middleware('checkrole');
+    Route::post('/products/save_media/{id}',[ProductController::class, 'save_media'])->middleware('checkrole');
+
 
 
 

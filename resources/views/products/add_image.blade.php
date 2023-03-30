@@ -10,7 +10,7 @@
       <div class="form-group row">
         <label for="inputEmail3" class="col-sm-2 col-form-label">Tên</label>
         <div class="col-sm-9">
-          <input type="" name="name" class="form-control" id="inputEmail3" placeholder="">
+          <input type="" name="name" value="{{ $product->name }}" class="form-control" id="inputEmail3" placeholder="">
         </div>
       </div>
     
@@ -65,11 +65,7 @@
     
 
     </div>
-    <div class="col-sm-5">
-      <div class="promotion-image-container">
-        <img src="https://via.placeholder.com/300x200" class="img-thumbnail">
-      </div>
-    </div>
+ 
     
   </div>
   <div class="form-group row">

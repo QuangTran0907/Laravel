@@ -132,7 +132,7 @@
                 <h3 class="m_1">{{ $item->name }}</h3>
                 <p class="m_2">{{ $item->brand->name }}</p>
                <div class="grid_img">
-                 <div class="css3"><img src="images/{{ $item->image_path }}" alt=""/></div>
+                 <div class="css3"><img src="images/{{ $item->image_path }}" style="width: 250px,height: 173px" alt=""/></div>
                     <div class="mask">
                          <div class="info">Quick View</div>
                     </div>

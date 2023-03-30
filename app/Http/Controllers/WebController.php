@@ -13,7 +13,7 @@ class WebController extends Controller
 {
     public function web_index()
     {
-        $products = Product::paginate(1);
+        $products = Product::paginate(6);
         
         return view('web.index',compact('products'));
     }

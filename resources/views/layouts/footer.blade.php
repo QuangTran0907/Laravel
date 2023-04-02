@@ -1,217 +1,201 @@
-<div class="footer">
+<!-- Footer - start -->
+<footer class="footer-wrap">
   <div class="footer-top">
-  <div class="wrap">
-       <div class="col_1_of_footer-top span_1_of_footer-top">
-    <ul class="f_list">
-      <li><img src="{{asset('img/f_icon.png')}}" alt=""/><span class="delivery">Free delivery on all orders over £100*</span></li>
-    </ul>
+      <div class="container">
+          <div class="row">
+              <div class="companyinfo">
+                  <a href="index.html">
+                      <img src="img/logo-b.png" alt="AllStore - MultiConcept eCommerce Responsive HTML5 Template">
+                      AllStore - MultiConcept eCommerce Responsive HTML5 Template
+                  </a>
+              </div>
+              <div class="f-block-list">
+                  <div class="f-block-wrap">
+                      <div class="f-block">
+                          <a href="#" class="f-block-btn" data-id="#f-block-modal-1">
+                              <div class="iframe-img">
+                                  <img src="http://placehold.it/300x127" alt="About us">
+                              </div>
+                              <div class="overlay-icon">
+                                  <i class="fa fa-info-circle"></i>
+                              </div>
+                          </a>
+                          <p class="f-info-ttl">About us</p>
+                          <p>Shipping and payment information.</p>
+                      </div>
+                  </div>
+                  <div class="f-block-wrap">
+                      <div class="f-block">
+                          <a href="#" class="f-block-btn" data-id="#f-block-modal-2">
+                              <div class="iframe-img">
+                                  <img src="http://placehold.it/300x127" alt="Ask questions">
+                              </div>
+                              <div class="overlay-icon">
+                                  <i class="fa fa-phone"></i>
+                              </div>
+                          </a>
+                          <p class="f-info-ttl">Ask questions</p>
+                          <p>We call back within 10 minutes</p>
+                      </div>
+                  </div>
+                  <div class="f-block-wrap">
+                      <div class="f-block">
+                          <a href="#" class="f-block-btn" data-id="#f-block-modal-3" data-content="<iframe width='853' height='480' src='https://www.youtube.com/embed/kaOVHSkDoPY?rel=0&amp;showinfo=0' allowfullscreen></iframe>">
+                              <div class="iframe-img">
+                                  <img src="http://placehold.it/300x127" alt="Video (2 min)">
+                              </div>
+                              <div class="overlay-icon">
+                                  <i class="fa fa-play-circle"></i>
+                              </div>
+                          </a>
+                          <p class="f-info-ttl">Video (2 min)</p>
+                          <p>Watch a video about our store</p>
+                      </div>
+                  </div>
+                  <div class="f-block-wrap">
+                      <div class="f-block">
+                          <a href="#" class="f-block-btn" data-id="#f-block-modal-4">
+                              <div class="iframe-img">
+                                  <img src="http://placehold.it/300x127" alt="Our address">
+                              </div>
+                              <div class="overlay-icon">
+                                  <i class="fa fa-map-marker"></i>
+                              </div>
+                          </a>
+                          <p class="f-info-ttl">Our address</p>
+                          <p>Spain, Madrid, 45</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="stylization f-block-modal f-block-modal-content" id="f-block-modal-1">
+                  <img class="f-block-modal-img" src="http://placehold.it/500x334" alt="About us">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam natus iste ullam vero, tenetur ab ipsa consectetur deleniti officiis ex debitis incidunt alias voluptatum, maxime placeat dolores veniam sunt at atque velit, soluta. Neque ea alias quia provident molestias, ratione aut esse placeat beatae sequi sed laudantium. Unde animi nihil esse, repellendus exercitationem dicta harum ab labore, voluptates explicabo in, quidem dolorum voluptas!
+              </div>
+              <div class="stylization f-block-modal f-block-modal-callback" id="f-block-modal-2">
+                  <div class="modalform">
+                      <form action="#" method="POST" class="form-validate">
+                          <p class="modalform-ttl">Callback</p>
+                          <input type="text" placeholder="Your name" data-required="text" name="name">
+                          <input type="text" placeholder="Your phone" data-required="text" name="phone">
+                          <button type="submit"><i class="fa fa-paper-plane"></i> Send</button>
+                      </form>
+                  </div>
+              </div>
+              <div class="stylization f-block-modal f-block-modal-video" id="f-block-modal-3">
+
+              </div>
+              <div class="stylization f-block-modal f-block-modal-map" id="f-block-modal-4">
+                  <div class="allstore-gmap">
+                      <div class="marker" data-zoom="15" data-lat="-37.81485261872975" data-lng="144.95655298233032" data-marker="img/marker.png">534-540 Little Bourke St, Melbourne VIC 3000, Australia</div>
+                  </div>
+              </div>
+              <div class="f-delivery">
+                  <img src="img/map.png" alt="">
+                  <h4>Free delivery in London</h4>
+                  <p>We will deliver within 1 hour</p>
+              </div>
+          </div>
+      </div>
   </div>
-  <div class="col_1_of_footer-top span_1_of_footer-top">
-   <ul class="f_list">
-      <li><img src="{{asset('img/f_icon1.png')}}" alt=""/><span class="delivery">Customer Service :<span class="orange"> (800) 000-2587 (freephone)</span></span></li>
-    </ul>
+
+  <div class="container f-menu-list">
+      <div class="row">
+          <div class="f-menu">
+              <h3>
+                  About us
+              </h3>
+              <ul class="nav nav-pills nav-stacked">
+                  <li class="active"><a href="index.html">Home</a></li>
+                  <li><a href="catalog-list.html">Catalog</a></li>
+                  <li><a href="elements.html">Elements</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="contacts.html">Contacts</a></li>
+              </ul>
+          </div>
+          <div class="f-menu">
+              <h3>
+                  Shop
+              </h3>
+              <ul class="nav nav-pills nav-stacked">
+                  <li><a href="catalog-list.html">Women</a></li>
+                  <li><a href="catalog-list.html">Men</a></li>
+                  <li><a href="catalog-list.html">Kids</a></li>
+                  <li><a href="catalog-list.html">Shoes</a></li>
+                  <li><a href="catalog-list.html">Accessories</a></li>
+              </ul>
+          </div>
+          <div class="f-menu">
+              <h3>
+                  Information
+              </h3>
+              <ul class="nav nav-pills nav-stacked">
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="blog.html">News</a></li>
+                  <li><a href="reviews.html">Reviews</a></li>
+                  <li><a href="blog.html">Articles</a></li>
+                  <li><a href="contacts.html">Contacts</a></li>
+              </ul>
+          </div>
+          <div class="f-menu">
+              <h3>
+                  Pages
+              </h3>
+              <ul class="nav nav-pills nav-stacked">
+                  <li><a href="contacts.html">About us</a></li>
+                  <li><a href="contacts.html">Delivery</a></li>
+                  <li><a href="contacts.html">Guarantees</a></li>
+                  <li><a href="contacts.html">Contacts</a></li>
+                  <li><a href="404.html">Page 404</a></li>
+              </ul>
+          </div>
+          <div class="f-subscribe">
+              <h3>Subscribe to news</h3>
+              <form class="f-subscribe-form" action="#">
+                  <input placeholder="Your e-mail" type="text">
+                  <button type="submit"><i class="fa fa-paper-plane"></i></button>
+              </form>
+              <p>Enter your email address if you want to receive our newsletter. Subscribe now!</p>
+          </div>
+      </div>
   </div>
-  <div class="col_1_of_footer-top span_1_of_footer-top">
-   <ul class="f_list">
-      <li><img src="{{asset('img/f_icon2.png')}}" alt=""/><span class="delivery">Fast delivery & free returns</span></li>
-    </ul>
+
+  <div class="footer-bottom">
+      <div class="container">
+          <div class="row">
+              <ul class="social-icons nav navbar-nav">
+                  <li>
+                      <a href="http://facebook.com/" rel="nofollow" target="_blank">
+                          <i class="fa fa-facebook"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://google.com/" rel="nofollow" target="_blank">
+                          <i class="fa fa-google-plus"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://twitter.com/" rel="nofollow" target="_blank">
+                          <i class="fa fa-twitter"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://vk.com/" rel="nofollow" target="_blank">
+                          <i class="fa fa-vk"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://instagram.com/" rel="nofollow" target="_blank">
+                          <i class="fa fa-instagram"></i>
+                      </a>
+                  </li>
+              </ul>
+              <div class="footer-copyright">
+                  <i><a href="https://themeforest.net/user/real-web?ref=real-web">Real-Web</a></i> © Copyright 2017
+              </div>
+          </div>
+      </div>
   </div>
- <div class="clear"></div>
-</div>
- </div>
- <div class="footer-middle">
-   <div class="wrap">
-     <div class="section group">
-<div class="col_1_of_middle span_1_of_middle">
- <dl id="sample" class="dropdown">
-     <dt><a href="#"><span>Please Select a Country</span></a></dt>
-     <dd>
-         <ul>
-             <li><a href="#">Australia<img class="flag" src="{{asset('img/as.png')}}" alt="" /><span class="value">AS</span></a></li>
-             <li><a href="#">Sri Lanka<img class="flag" src="{{asset('img/srl.png')}}" alt="" /><span class="value">SL</span></a></li>
-             <li><a href="#">Newziland<img class="flag" src="{{asset('img/nz.png')}}" alt="" /><span class="value">NZ</span></a></li>
-             <li><a href="#">Pakistan<img class="flag" src="{{asset('img/pk.png')}}" alt="" /><span class="value">Pk</span></a></li>
-             <li><a href="#">United Kingdom<img class="flag" src="{{asset('img/uk.png')}}" alt="" /><span class="value">UK</span></a></li>
-             <li><a href="#">United States<img class="flag" src="{{asset('img/us.png')}}" alt="" /><span class="value">US</span></a></li>
-         </ul>
-      </dd>
-      </dl>
-   </div>
-<div class="col_1_of_middle span_1_of_middle">
- <ul class="f_list1">
-   <li><span class="m_8">Sign up for email and Get 15% off</span>
-   <div class="search">	  
-     <input type="text" name="s" class="textbox" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-     <input type="submit" value="Subscribe" id="submit" name="submit">
-     <div id="response"> </div>
-    </div><div class="clear"></div>
-      </li>
- </ul>
-</div>
-<div class="clear"></div>
-</div>
-   </div>
- </div>
- <div class="footer-bottom">
-   <div class="wrap">
-     <div class="section group">
-<div class="col_1_of_5 span_1_of_5">
- <h3 class="m_9">Shop</h3>
- <ul class="sub_list">
-   <h4 class="m_10">Men</h4>
-     <li><a href="shop.html">Men's Shoes</a></li>
-         <li><a href="shop.html">Men's Clothing</a></li>
-         <li><a href="shop.html">Men's Accessories</a></li>
-     </ul>
-          <ul class="sub_list">
-           <h4 class="m_10">Women</h4>
-           <li><a href="shop.html">Women's Shoes</a></li>
-           <li><a href="shop.html">Women's Clothing</a></li>
-           <li><a href="shop.html">Women's Accessories</a></li>
-        </ul>
-        <ul class="sub_list">
-           <h4 class="m_10">Kids</h4>
-           <li><a href="shop.html">Kids Shoes</a></li>
-           <li><a href="shop.html">Kids Clothing</a></li>
-           <li><a href="shop.html">Kids Accessories</a></li>
-        </ul>
-       <ul class="sub_list">
-           <h4 class="m_10">style</h4>
-           <li><a href="shop.html">Porsche Design Sport</a></li>
-           <li><a href="shop.html">Porsche Design Shoes</a></li>
-           <li><a href="shop.html">Porsche Design Clothing</a></li>
-       </ul>
-       <ul class="sub_list">
-           <h4 class="m_10">Adidas Neo Label</h4>
-           <li><a href="shop.html">Adidas NEO Shoes</a></li>
-           <li><a href="shop.html">Adidas NEO Clothing</a></li>
-       </ul>
-       <ul class="sub_list1">
-           <h4 class="m_10">Customise</h4>
-           <li><a href="shop.html">mi adidas</a></li>
-           <li><a href="shop.html">mi team</a></li>
-           <li><a href="shop.html">new arrivals</a></li>
-       </ul>
-</div>
-<div class="col_1_of_5 span_1_of_5">
- <h3 class="m_9">Sports</h3>
- <ul class="list1">
-     <li><a href="shop.html">Basketball</a></li>
-         <li><a href="shop.html">Football</a></li>
-         <li><a href="shop.html">Football Boots</a></li>
-         <li><a href="shop.html">Predator</a></li>
-         <li><a href="shop.html">F50</a></li>
-         <li><a href="shop.html">Football Clothing</a></li>
-         <li><a href="shop.html">Golf</a></li>
-         <li><a href="shop.html">Golf Shoes</a></li>
-         <li><a href="shop.html">Golf Clothing</a></li>
-         <li><a href="shop.html">Outdoor</a></li>
-         <li><a href="shop.html">Outdoor Shoes</a></li>
-         <li><a href="shop.html">Outdoor Clothing</a></li>
-         <li><a href="shop.html">Rugby</a></li>
-         <li><a href="shop.html">Running</a></li>
-         <li><a href="shop.html">Running Shoes</a></li>
-         <li><a href="shop.html">Boost</a></li>
-         <li><a href="shop.html">Supernova</a></li>
-         <li><a href="shop.html">Running Clothing</a></li>
-         <li><a href="shop.html">Swimming</a></li>
-         <li><a href="shop.html">Tennis</a></li>
-         <li><a href="shop.html">Tennis Shoes</a></li>
-         <li><a href="shop.html">Tennis Clothing</a></li>
-         <li><a href="shop.html">Training</a></li>
-         <li><a href="shop.html">Training Shoes</a></li>
-         <li><a href="shop.html">Training Clothing</a></li>
-         <li><a href="shop.html">Training Accessories</a></li>
-         <li><a href="shop.html">miCoach</a></li>
-         <li><a href="shop.html">All Sports</a></li>
-      </ul>
-</div>
-<div class="col_1_of_5 span_1_of_5">
- <h3 class="m_9">Originals</h3>
- <ul class="list1">
-     <li><a href="shop.html">Originals Shoes</a></li>
-         <li><a href="shop.html">Gazelle</a></li>
-         <li><a href="shop.html">Samba</a></li>
-         <li><a href="shop.html">LA Trainer</a></li>
-         <li><a href="shop.html">Superstar</a></li>
-         <li><a href="shop.html">SL</a></li>
-         <li><a href="shop.html">ZX</a></li>
-         <li><a href="shop.html">Campus</a></li>
-         <li><a href="shop.html">Spezial</a></li>
-         <li><a href="shop.html">Dragon</a></li>
-         <li><a href="shop.html">Originals Clothing</a></li>
-         <li><a href="shop.html">Firebird</a></li>
-         <li><a href="shop.html">Originals Accessories</a></li>
-         <li><a href="shop.html">Men's Originals</a></li>
-         <li><a href="shop.html">Women's Originals</a></li>
-         <li><a href="shop.html">Kid's Originals</a></li>
-         <li><a href="shop.html">All Originals</a></li>
-       </ul>
-</div>
-<div class="col_1_of_5 span_1_of_5">
- <h3 class="m_9">Product Types</h3>
- <ul class="list1">
-     <li><a href="shop.html">Shirts</a></li>
-     <li><a href="shop.html">Pants & Tights</a></li>
-     <li><a href="shop.html">Shirts</a></li>
-     <li><a href="shop.html">Jerseys</a></li>
-     <li><a href="shop.html">Hoodies & Track Tops</a></li>
-     <li><a href="shop.html">Bags</a></li>
-     <li><a href="shop.html">Jackets</a></li>
-     <li><a href="shop.html">Hi Tops</a></li>
-     <li><a href="shop.html">SweatShirts</a></li>
-     <li><a href="shop.html">Socks</a></li>
-     <li><a href="shop.html">Swimwear</a></li>
-     <li><a href="shop.html">Tracksuits</a></li>
-     <li><a href="shop.html">Hats</a></li>
-     <li><a href="shop.html">Football Boots</a></li>
-     <li><a href="shop.html">Other Accessories</a></li>
-     <li><a href="shop.html">Sandals & Flip Flops</a></li>
-     <li><a href="shop.html">Skirts & Dresseses</a></li>
-     <li><a href="shop.html">Balls</a></li>
-     <li><a href="shop.html">Watches</a></li>
-     <li><a href="shop.html">Fitness Equipment</a></li>
-     <li><a href="shop.html">Eyewear</a></li>
-     <li><a href="shop.html">Gloves</a></li>
-     <li><a href="shop.html">Sports Bras</a></li>
-     <li><a href="shop.html">Scarves</a></li>
-     <li><a href="shop.html">Shinguards</a></li>
-     <li><a href="shop.html">Underwear</a></li>
-       </ul>
-</div>
-<div class="col_1_of_5 span_1_of_5">
- <h3 class="m_9">Support</h3>
- <ul class="list1">
-    <li><a href="shop.html">Store finder</a></li>
-    <li><a href="shop.html">Customer Service</a></li>
-    <li><a href="shop.html">FAQ</a></li>
-    <li><a href="shop.html">Online Shop Contact Us</a></li>
-    <li><a href="shop.html">about adidas Products</a></li>
-    <li><a href="shop.html">Size Charts </a></li>
-    <li><a href="shop.html">Ordering </a></li>
-    <li><a href="shop.html">Payment </a></li>
-    <li><a href="shop.html">Shipping </a></li>
-    <li><a href="shop.html">Returning</a></li>
-    <li><a href="shop.html">Using out Site</a></li>
-    <li><a href="shop.html">Delivery Terms</a></li>
-    <li><a href="shop.html">Site Map</a></li>
-    <li><a href="shop.html">Gift Card</a></li>
-   
-       </ul>
-       <ul class="sub_list2">
-          <h4 class="m_10">Company Info</h4>
-        <li><a href="shop.html">About Us</a></li>
-        <li><a href="shop.html">Careers</a></li>
-        <li><a href="shop.html">Press</a></li>
-     </ul>
-</div>
-<div class="clear"></div>
-</div>
-   </div>
- </div>
- <div class="copy">
-   <div class="wrap">
-       <p>© All rights reserved | Template by&nbsp;<a href="http://w3layouts.com/"> W3Layouts</a></p>
-   </div>
- </div>
-</div>
+
+</footer>
+<!-- Footer - end -->

@@ -19,11 +19,10 @@ use App\Models\Cart;
 
 
 
-Route::get('/homepage',[WebController::class, 'web_index']);
+Route::get('/',[WebController::class, 'web_index']);
 Route::get('/homepage/{id}',[WebController::class, 'detail']);
 
 
- Route::get("/test/{id}",[CartController::class, 'addProduct']);
 
  Route::get("register",[AuthController::class, 'showRegister']);
  Route::post("register",[AuthController::class, 'register']);
@@ -37,7 +36,15 @@ Route::get('/homepage/{id}',[WebController::class, 'detail']);
 
 
 Route::middleware('checklogin')->group(function(){
-   
+
+    Route::get("/add_product/{id}",[CartController::class, 'addProduct']);
+    Route::get("/cart",[CartController::class, 'showCart']);
+    Route::get("/delete/{id}",[CartController::class, 'deleteItem']);
+    Route::get("/delete_all",[CartController::class, 'deleteAll']);
+
+    
+
+
     Route::get("logout",[AuthController::class, 'logout']);
     Route::get("profile",[AuthController::class, 'showProfile']);
     Route::post("profile",[AuthController::class, 'updateProfile']);

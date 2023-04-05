@@ -34,6 +34,12 @@ class AuthController extends Controller
 
         }
     }
+    public function logout()
+    {
+       Auth::logout();
+       return redirect()->action([WebController::class, 'web_index']);
+
+    }
 
     public function showProfile()
     {

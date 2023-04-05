@@ -17,7 +17,9 @@
         </ul>
         <h1 class="main-ttl"><span>Cart</span></h1>
         <!-- Cart Items - start -->
-        <form action="#">
+        <form action="/order" method="post">
+            @csrf
+            @method('post')
 
             <div class="cart-items-wrap">
                 <table class="cart-items">
@@ -35,7 +37,6 @@
                         @php
                             $sum = 0;
                         @endphp
-                        @if ($cart_products != null)
                         @foreach ($cart_products as $item)
                             
                         <tr>
@@ -69,25 +70,35 @@
                         </tr>
                         @endforeach
                        
-                        @endif
-                        
                        
                     
                     </tbody>
                 </table>
             </div>
             <ul class="cart-total">
+                <input type="text" hidden ='true' value="{{ $sum }}" name="total">
                 <li class="cart-summ">TOTAL: <b>{{ $sum }} $</b></li>
             </ul>
             <div class="cart-submit">
                 <div class="cart-coupon">
-                    <input placeholder="your coupon" type="text">
-                    <a class="cart-coupon-btn" href="#"><img src="img/ok.png" alt="your coupon"></a>
+                    
+                        
+                        <label  for="Your address">Address </label>
+                    <input name="address" placeholder="your address" type="text">
+                    <label for="Your phone number">Phone number </label>
+                    <input name="phoneNumber" placeholder="Your phone number" type="text">
+                    <br>
+                    <br>
+                    
+                    <button class="cart-submit-btn">Order</button>
+                    
+                    
+                   
                 </div>
                 <div>
-                    <a href="/order" class="cart-submit-btn">Checkout</a>
+                    
 
-                    <a href="/delete_all" class="cart-clear">Clear cart</a>
+                    
                 </div>
                 
                

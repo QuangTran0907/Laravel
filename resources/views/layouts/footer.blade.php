@@ -5,8 +5,8 @@
           <div class="row">
               <div class="companyinfo">
                   <a href="index.html">
-                      <img src="img/logo-b.png" alt="AllStore - MultiConcept eCommerce Responsive HTML5 Template">
-                      AllStore - MultiConcept eCommerce Responsive HTML5 Template
+                      <img src="{{ asset('img/logo-b.png') }}" alt="AllStore - MultiConcept eCommerce Responsive HTML5 Template">
+                   
                   </a>
               </div>
               <div class="f-block-list">
@@ -56,14 +56,12 @@
                       <div class="f-block">
                           <a href="#" class="f-block-btn" data-id="#f-block-modal-4">
                               <div class="iframe-img">
-                                  <img src="http://placehold.it/300x127" alt="Our address">
+                                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15673.710568264787!2d106.785373!3d10.8550427!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527c3debb5aad%3A0x5fb58956eb4194d0!2zxJDhuqFpIEjhu41jIEh1dGVjaCBLaHUgRQ!5e0!3m2!1svi!2s!4v1680669565486!5m2!1svi!2s" width="300" height="127" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                               </div>
-                              <div class="overlay-icon">
-                                  <i class="fa fa-map-marker"></i>
-                              </div>
+
                           </a>
                           <p class="f-info-ttl">Our address</p>
-                          <p>Spain, Madrid, 45</p>
+                          <p>Hiep Phu, Q9, Thu Duc</p>
                       </div>
                   </div>
               </div>
@@ -191,7 +189,7 @@
                   </li>
               </ul>
               <div class="footer-copyright">
-                  <i><a href="https://themeforest.net/user/real-web?ref=real-web">Real-Web</a></i> © Copyright 2017
+                  <i><a href="https://themeforest.net/user/real-web?ref=real-web">Nhom 06</a></i> © Copyright 2023
               </div>
           </div>
       </div>

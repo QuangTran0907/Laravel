@@ -3,6 +3,8 @@
 namespace App\Http\Middleware;
 
 use App\Http\Controllers\AuthController;
+use App\Models\Cart;
+use App\Models\Cart_Product;
 use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
@@ -24,6 +26,7 @@ class CheckLoginMiddleware
         $user = User::find(\auth()->id());
         if(Auth::check())
         {
+
             return $next($request);
         }
         return redirect()->action([AuthController::class, 'showLogin']);

@@ -1,14 +1,13 @@
 <header class="header">
-
   <!-- Topbar - start -->
   <div class="header_top">
       <div class="container">
           <ul class="contactinfo nav nav-pills">
               <li>
-                  <i class='fa fa-phone'></i> +7 777 123 1575
+                  <i class='fa fa-phone'></i> 0999999999
               </li>
               <li>
-                  <i class="fa fa-envelope"></i> admin@real-web.pro
+                  <i class="fa fa-envelope"></i> nhom06@gmail.com
               </li>
           </ul>
           <!-- Social links -->
@@ -47,7 +46,7 @@
       <div class="container header-middle-cont">
           <div class="toplogo">
               <a href="/">
-                  <img src="img/logo.png" alt="AllStore - MultiConcept eCommerce Template">
+                  <img src="{{ asset('img/logo.png') }}" alt="AllStore - MultiConcept eCommerce Template">
               </a>
           </div>
           <div class="shop-menu">
@@ -58,13 +57,21 @@
                 
 
                   <li class="topauth">
-                      <a href="auth.html">
-                          <i class="fa fa-lock"></i>
-                          <span class="shop-menu-ttl">Registration</span>
-                      </a>
-                      <a href="auth.html">
-                          <span class="shop-menu-ttl">Login</span>
-                      </a>
+                    @if (Auth::check())
+                    <a href="/logout">
+                        <i class="fa fa-sign-out"></i>
+                        <span class="shop-menu-ttl">Logout</span>
+                    </a>
+                    @else
+                    <a href="/register">
+                        <i class="fa fa-lock"></i>
+                        <span class="shop-menu-ttl">Registration</span>
+                    </a>
+                    <a href="/login">
+                        <span class="shop-menu-ttl">Login</span>
+                    </a>
+                    @endif
+                      
                   </li>
 
                   <li>
@@ -72,7 +79,9 @@
                           <a href="/cart">
                               <i class="fa fa-shopping-cart"></i>
                               <span class="shop-menu-ttl">Cart</span>
-                              (<b>0</b>)
+                             
+                              
+                              
                           </a>
                       </div>
                   </li>

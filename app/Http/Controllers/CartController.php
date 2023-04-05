@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Cart_Product;
+use App\Models\Invoice;
+use App\Models\Invoice_Product;
 use App\Models\Product;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
@@ -40,7 +42,8 @@ class CartController extends Controller
         }else{
             $cart_product = Cart_Product::where('product_id',$id)->update(['amount'=>$exist_cart_product[0]->amount+1]);
         } 
-        return back();    
+
+        return  back();  
         
     }
     public function minusProduct(Request $request,$id)
@@ -52,6 +55,7 @@ class CartController extends Controller
         {
             Cart_Product::where('product_id',$id)->delete();
         }
+        return back();
         
     }
 
@@ -64,16 +68,77 @@ class CartController extends Controller
     }
     public function deleteAll(Request $request)
     {
-        
-        Cart_Product::truncate();
+        $cart = Cart::where('user_id',auth()->id())->first(); 
+        $cart_products = Cart_Product::where('cart_id',$cart->id)->get();
+       
+        foreach($cart_products as $item){
+            $item->delete();
+
+        }
         return redirect()->action([CartController::class, 'showCart']);
         
     }
     public function showCart()
     {
+        $cart = Cart::where('user_id',auth()->id())->first(); 
+        $cart_products = null;
+        if($cart!=null){
+            $cart_products = Cart_Product::where('cart_id',$cart->id)->get();
+           
+            return view('web.cart',compact('cart_products'));
+            
+        }else{
+            return view('web.cart',compact('cart_products'));
+        }
+
+       
+    }
+    public function showOrder()
+    {
         
-        $cart_products = Cart_Product::all();
-        return view('web.cart',compact('cart_products'));
+        $cart = Cart::where('user_id',auth()->id())->first(); 
+
+        $cart_products = Cart_Product::where('cart_id',$cart->id)->get();
+        return view('web.order',compact('cart_products'));
+    }
+    public function order(Request $request)
+    {
+        $cart = Cart::where('user_id',auth()->id())->first();
+        $cart_products = Cart_Product::where('cart_id',$cart->id)->get();
+
+        $invoice = Invoice::create([
+            'delivery_address' => $request->input('address'),
+            'sdt' => $request->input('phoneNumber'),
+            'amount' => $cart_products->count(),
+            'total' => $request->input('total'),
+            'status' => 0
+        
+        ]);
+        $invoice->save();
+            foreach ($cart_products as $item) {
+                $invoice_product = Invoice_Product::create([
+                    'invoice_id' => $invoice->id,
+                    'product_id' => $item->product_id,
+                    'amount' => $item->amount
+                ]);
+                $invoice_product->save();
+                
+
+            } 
+
+            $cart->delete();
+            foreach($cart_products as $item){
+                $item->delete();
+
+            }
+           
+
+            return redirect()->action([WebController::class, 'web_index']);
+                
+               
+             
+       
+
         
     }
 

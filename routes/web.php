@@ -38,12 +38,14 @@ Route::get('/homepage/{id}',[WebController::class, 'detail']);
 Route::middleware('checklogin')->group(function(){
 
     Route::get("/add_product/{id}",[CartController::class, 'addProduct']);
+    Route::get("/minus_product/{id}",[CartController::class, 'minusProduct']);
     Route::get("/cart",[CartController::class, 'showCart']);
+    Route::get("/order",[CartController::class, 'showOrder']);
+    Route::post("/order",[CartController::class, 'order']);
+
+
     Route::get("/delete/{id}",[CartController::class, 'deleteItem']);
     Route::get("/delete_all",[CartController::class, 'deleteAll']);
-
-    
-
 
     Route::get("logout",[AuthController::class, 'logout']);
     Route::get("profile",[AuthController::class, 'showProfile']);

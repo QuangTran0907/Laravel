@@ -37,10 +37,10 @@
 
             <ul class="fr-pop-tabs sections-show">
                 <li><a data-frpoptab-num="1" data-frpoptab="#frpoptab-tab-1" href="#" class="active">All Products</a></li>
-                <li><a data-frpoptab-num="2" data-frpoptab="#frpoptab-tab-2" href="#">Women</a></li>
-                <li><a data-frpoptab-num="3" data-frpoptab="#frpoptab-tab-3" href="#">Men</a></li>
-                <li><a data-frpoptab-num="4" data-frpoptab="#frpoptab-tab-4" href="#">Kids</a></li>
-                <li><a data-frpoptab-num="5" data-frpoptab="#frpoptab-tab-5" href="#">hot</a></li>
+                <li><a data-frpoptab-num="2" data-frpoptab="#frpoptab-tab-2" href="#">Adidas</a></li>
+                <li><a data-frpoptab-num="3" data-frpoptab="#frpoptab-tab-3" href="#">Puma</a></li>
+                <li><a data-frpoptab-num="4" data-frpoptab="#frpoptab-tab-4" href="#">Nike</a></li>
+                <li><a data-frpoptab-num="5" data-frpoptab="#frpoptab-tab-5" href="#">Reebok</a></li>
             </ul>
 
             <div class="fr-pop-tab-cont">
@@ -52,7 +52,7 @@
                       @foreach ($products as $item)
                       <li class="prod-i">
                         <div class="prod-i-top">
-                            <a href="product.html" class="prod-i-img"><!-- NO SPACE --><img src="{{ asset('images/'.$item->image_path) }}" alt="Aperiam tempore"><!-- NO SPACE --></a>
+                            <a href="homepage/{{ $item->id }}" class="prod-i-img"><!-- NO SPACE --><img src="{{ asset('images/'.$item->image_path) }}" alt="Aperiam tempore"><!-- NO SPACE --></a>
                             
                             <p class="prod-i-addwrap">
                                 <a href="/add_product/{{ $item->id }}" class="prod-i-add">Add to cart</a>
@@ -67,88 +67,119 @@
                     </li>
                       @endforeach
 
-                      
+                    </ul>
                 </div>
 
-                <p data-frpoptab-num="2" class="fr-pop-tab-mob" data-frpoptab="#frpoptab-tab-2">Kids</p>
+                <p data-frpoptab-num="2" class="fr-pop-tab-mob" data-frpoptab="#frpoptab-tab-2">Adidas</p>
                 <div class="flexslider prod-items fr-pop-tab" id="frpoptab-tab-2">
 
                     <ul class="slides">
-
-                      @foreach ($products as $item)
-                      <li class="prod-i">
-                        <div class="prod-i-top">
-                            <a href="product.html" class="prod-i-img"><!-- NO SPACE --><img src="{{ asset('images/'.$item->image_path) }}" alt="Aperiam tempore"><!-- NO SPACE --></a>
-                            
-                            <p class="prod-i-addwrap">
-                                <a href="#" class="prod-i-add">Add to cart</a>
+                        @foreach ($products as $item)
+                        @if ($item->brand->name == 'Adidas')
+                        <li class="prod-i">
+                            <div class="prod-i-top">
+                                <a href="homepage/{{ $item->id }}" class="prod-i-img"><!-- NO SPACE --><img src="{{ asset('images/'.$item->image_path) }}" alt="Aperiam tempore"><!-- NO SPACE --></a>
+                                
+                                <p class="prod-i-addwrap">
+                                    <a href="/add_product/{{ $item->id }}" class="prod-i-add">Add to cart</a>
+                                </p>
+                            </div>
+                            <h3>
+                                <a href="product.html">{{ $item->name }}</a>
+                            </h3>
+                            <p class="prod-i-price">
+                                <b>${{ $item->price }}</b>
                             </p>
-                        </div>
-                        <h3>
-                            <a href="product.html">{{ $item->name }}</a>
-                        </h3>
-                        <p class="prod-i-price">
-                            <b>${{ $item->price }}</b>
-                        </p>
-                    </li>
-                      @endforeach
-
-                    </ul>
+                        </li>
+                        @endif
+                        
+                        @endforeach
+  
+                      </ul>
                 </div>
+                <p data-frpoptab-num="2" class="fr-pop-tab-mob" data-frpoptab="#frpoptab-tab-3">Puma</p>
+                <div class="flexslider prod-items fr-pop-tab" id="frpoptab-tab-3">
 
-                <p data-frpoptab-num="4" class="fr-pop-tab-mob" data-frpoptab="#frpoptab-tab-4">Men</p>
+                    <ul class="slides">
+                        @foreach ($products as $item)
+                        @if ($item->brand->name == 'Puma')
+                        <li class="prod-i">
+                            <div class="prod-i-top">
+                                <a href="homepage/{{ $item->id }}" class="prod-i-img"><!-- NO SPACE --><img src="{{ asset('images/'.$item->image_path) }}" alt="Aperiam tempore"><!-- NO SPACE --></a>
+                                
+                                <p class="prod-i-addwrap">
+                                    <a href="/add_product/{{ $item->id }}" class="prod-i-add">Add to cart</a>
+                                </p>
+                            </div>
+                            <h3>
+                                <a href="product.html">{{ $item->name }}</a>
+                            </h3>
+                            <p class="prod-i-price">
+                                <b>${{ $item->price }}</b>
+                            </p>
+                        </li>
+                        @endif
+                        
+                        @endforeach
+  
+                      </ul>
+                </div>
+                <p data-frpoptab-num="2" class="fr-pop-tab-mob" data-frpoptab="#frpoptab-tab-4">Nike</p>
                 <div class="flexslider prod-items fr-pop-tab" id="frpoptab-tab-4">
 
                     <ul class="slides">
-
-                      @foreach ($products as $item)
-                      <li class="prod-i">
-                        <div class="prod-i-top">
-                            <a href="product.html" class="prod-i-img"><!-- NO SPACE --><img src="{{ asset('images/'.$item->image_path) }}" alt="Aperiam tempore"><!-- NO SPACE --></a>
-                            
-                            <p class="prod-i-addwrap">
-                                <a href="#" class="prod-i-add">Add to cart</a>
+                        @foreach ($products as $item)
+                        @if ($item->brand->name == 'Nike')
+                        <li class="prod-i">
+                            <div class="prod-i-top">
+                                <a href="homepage/{{ $item->id }}" class="prod-i-img"><!-- NO SPACE --><img src="{{ asset('images/'.$item->image_path) }}" alt="Aperiam tempore"><!-- NO SPACE --></a>
+                                
+                                <p class="prod-i-addwrap">
+                                    <a href="/add_product/{{ $item->id }}" class="prod-i-add">Add to cart</a>
+                                </p>
+                            </div>
+                            <h3>
+                                <a href="product.html">{{ $item->name }}</a>
+                            </h3>
+                            <p class="prod-i-price">
+                                <b>${{ $item->price }}</b>
                             </p>
-                        </div>
-                        <h3>
-                            <a href="product.html">{{ $item->name }}</a>
-                        </h3>
-                        <p class="prod-i-price">
-                            <b>${{ $item->price }}</b>
-                        </p>
-                    </li>
-                      @endforeach
-                    </ul>
-
+                        </li>
+                        @endif
+                        
+                        @endforeach
+  
+                      </ul>
                 </div>
-
-
-                <p data-frpoptab-num="5" class="fr-pop-tab-mob" data-frpoptab="#frpoptab-tab-5">Shoes</p>
+                <p data-frpoptab-num="2" class="fr-pop-tab-mob" data-frpoptab="#frpoptab-tab-5">Reebok</p>
                 <div class="flexslider prod-items fr-pop-tab" id="frpoptab-tab-5">
 
                     <ul class="slides">
-                      
-                      @foreach ($products as $item)
-                      <li class="prod-i">
-                        <div class="prod-i-top">
-                            <a href="product.html" class="prod-i-img"><!-- NO SPACE --><img src="{{ asset('images/'.$item->image_path) }}" alt="Aperiam tempore"><!-- NO SPACE --></a>
-                            
-                            <p class="prod-i-addwrap">
-                                <a href="#" class="prod-i-add">Add to cart</a>
+                        @foreach ($products as $item)
+                        @if ($item->brand->name == 'Reebok')
+                        <li class="prod-i">
+                            <div class="prod-i-top">
+                                <a href="homepage/{{ $item->id }}" class="prod-i-img"><!-- NO SPACE --><img src="{{ asset('images/'.$item->image_path) }}" alt="Aperiam tempore"><!-- NO SPACE --></a>
+                                
+                                <p class="prod-i-addwrap">
+                                    <a href="/add_product/{{ $item->id }}" class="prod-i-add">Add to cart</a>
+                                </p>
+                            </div>
+                            <h3>
+                                <a href="product.html">{{ $item->name }}</a>
+                            </h3>
+                            <p class="prod-i-price">
+                                <b>${{ $item->price }}</b>
                             </p>
-                        </div>
-                        <h3>
-                            <a href="product.html">{{ $item->name }}</a>
-                        </h3>
-                        <p class="prod-i-price">
-                            <b>${{ $item->price }}</b>
-                        </p>
-                    </li>
-                      @endforeach
-                    </ul>
-
+                        </li>
+                        @endif
+                        
+                        @endforeach
+  
+                      </ul>
                 </div>
 
+                
 
             </div><!-- .fr-pop-tab-cont -->
 
@@ -156,159 +187,13 @@
         </div><!-- .fr-pop-wrap -->
 
 
-        <!-- Banners -->
-        <div class="banners-wrap">
-            <div class="banners-list">
-                <div class="banner-i style_11">
-                    <span class="banner-i-bg" style="background: url(http://placehold.it/560x360);"></span>
-                    <div class="banner-i-cont">
-                        <p class="banner-i-subttl">NEW COLLECTION</p>
-                        <h3 class="banner-i-ttl">MEN'S<br>CLOTHING</h3>
-                        <p class="banner-i-link"><a href="section.html">View More</a></p>
-                    </div>
-                </div>
-                <div class="banner-i style_22">
-                    <span class="banner-i-bg" style="background: url(http://placehold.it/270x360);"></span>
-                    <div class="banner-i-cont">
-                        <p class="banner-i-subttl">GREAT COLLECTION</p>
-                        <h3 class="banner-i-ttl">CLOTHING<br>ACCESSORIES</h3>
-                        <p class="banner-i-link"><a href="section.html">Show more</a></p>
-                    </div>
-                </div>
-                <div class="banner-i style_21">
-                    <span class="banner-i-bg" style="background: url(http://placehold.it/270x360);"></span>
-                    <div class="banner-i-cont">
-                        <h3 class="banner-i-ttl">SPORT<br>CLOTHES</h3>
-                        <p class="banner-i-link"><a href="section.html">Go to catalog</a></p>
-                    </div>
-                </div>
-                <div class="banner-i style_21">
-                    <span class="banner-i-bg" style="background: url(http://placehold.it/270x360);"></span>
-                    <div class="banner-i-cont">
-                        <h3 class="banner-i-ttl">MEN AND <br>WOMEN SHOES</h3>
-                        <p class="banner-i-link"><a href="section.html">View More</a></p>
-                    </div>
-                </div>
-                <div class="banner-i style_22">
-                    <span class="banner-i-bg" style="background: url(http://placehold.it/270x360);"></span>
-                    <div class="banner-i-cont">
-                        <p class="banner-i-subttl">DISCOUNT -20%</p>
-                        <h3 class="banner-i-ttl">HATS<br>COLLECTION</h3>
-                        <p class="banner-i-link"><a href="section.html">Shop now</a></p>
-                    </div>
-                </div>
-                <div class="banner-i style_12">
-                    <span class="banner-i-bg" style="background: url(http://placehold.it/560x360);"></span>
-                    <div class="banner-i-cont">
-                        <p class="banner-i-subttl">STYLISH CLOTHES</p>
-                        <h3 class="banner-i-ttl">WOMEN'S COLLECTION</h3>
-                        <p>A great selection of dresses, <br>blouses and women's suits</p>
-                        <p class="banner-i-link"><a href="section.html">View More</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
 
 
         <!-- Special offer -->
         <div class="discounts-wrap">
             <h3 class="component-ttl"><span>Special offer</span></h3>
-            <div class="flexslider discounts-list">
-                <ul class="slides">
-                    <li class="discounts-i">
-                        <a href="product.html" class="discounts-i-img">
-                            <img src="http://placehold.it/120x120" alt="Dicta doloremque">
-                        </a>
-                        <h3 class="discounts-i-ttl">
-                            <a href="product.html">Dicta doloremque</a>
-                        </h3>
-                        <p class="discounts-i-price">
-                            <b>$115</b> <del>$135</del>
-                        </p>
-                    </li>
-                    <li class="discounts-i">
-                        <a href="product.html" class="discounts-i-img">
-                            <img src="http://placehold.it/99x120" alt="Similique delectus">
-                        </a>
-                        <h3 class="discounts-i-ttl">
-                            <a href="product.html">Similique delectus</a>
-                        </h3>
-                        <p class="discounts-i-price">
-                            <b>$105</b> <del>$120</del>
-                        </p>
-                    </li>
-                    <li class="discounts-i">
-                        <a href="product.html" class="discounts-i-img">
-                            <img src="http://placehold.it/75x120" alt="Adipisci nemo">
-                        </a>
-                        <h3 class="discounts-i-ttl">
-                            <a href="product.html">Adipisci nemo</a>
-                        </h3>
-                        <p class="discounts-i-price">
-                            <b>$70</b> <del>$90</del>
-                        </p>
-                    </li>
-                    <li class="discounts-i">
-                        <a href="product.html" class="discounts-i-img">
-                            <img src="http://placehold.it/65x120" alt="Ullam harum">
-                        </a>
-                        <h3 class="discounts-i-ttl">
-                            <a href="product.html">Ullam harum</a>
-                        </h3>
-                        <p class="discounts-i-price">
-                            <b>$55</b> <del>$75</del>
-                        </p>
-                    </li>
-                    <li class="discounts-i">
-                        <a href="product.html" class="discounts-i-img">
-                            <img src="http://placehold.it/78x120" alt="Similique delectus">
-                        </a>
-                        <h3 class="discounts-i-ttl">
-                            <a href="product.html">Similique delectus</a>
-                        </h3>
-                        <p class="discounts-i-price">
-                            <b>$135</b> <del>$155</del>
-                        </p>
-                    </li>
-                    <li class="discounts-i">
-                        <a href="product.html" class="discounts-i-img">
-                            <img src="http://placehold.it/81x120" alt="Туфли Dr.Koffer">
-                        </a>
-                        <h3 class="discounts-i-ttl">
-                            <a href="product.html">Туфли Dr.Koffer</a>
-                        </h3>
-                        <p class="discounts-i-price">
-                            <b>$190</b> <del>$210</del>
-                        </p>
-                    </li>
-                    <li class="discounts-i">
-                        <a href="product.html" class="discounts-i-img">
-                            <img src="http://placehold.it/117x120" alt="Quod consequatur">
-                        </a>
-                        <h3 class="discounts-i-ttl">
-                            <a href="product.html">Quod consequatur</a>
-                        </h3>
-                        <p class="discounts-i-price">
-                            <b>$120</b> <del>$140</del>
-                        </p>
-                    </li>
-                    <li class="discounts-i">
-                        <a href="product.html" class="discounts-i-img">
-                            <img src="http://placehold.it/80x120" alt="Dolore fugit">
-                        </a>
-                        <h3 class="discounts-i-ttl">
-                            <a href="product.html">Dolore fugit</a>
-                        </h3>
-                        <p class="discounts-i-price">
-                            <b>$80</b> <del>$95</del>
-                        </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="discounts-info">
-                <p>Special offer!<br>Limited time only</p>
-                <a href="catalog-list.html">Shop now</a>
-            </div>
+           
         </div>
 
 

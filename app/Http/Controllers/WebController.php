@@ -24,7 +24,6 @@ class WebController extends Controller
             $user = User::find(\auth()->id());
             $cart = Cart::where('user_id',$user->id)->first();
             
-           
       
             return view('web.index',compact('products'));
         }

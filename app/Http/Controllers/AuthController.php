@@ -25,7 +25,8 @@ class AuthController extends Controller
     }
     public function showLogin()
     {
-        return view('Auth.login');
+        $message = '';
+        return view('Auth.login',compact('message'));
     }
     public function login(Request $request)
     {
@@ -33,6 +34,9 @@ class AuthController extends Controller
             return redirect()->action([WebController::class, 'web_index']);
 
         }
+        else 
+        $message = 'Wrong iformation';
+        return view('Auth.login',compact('message'));
     }
     public function logout()
     {

@@ -82,6 +82,7 @@ class CartController extends Controller
     {
         $cart = Cart::where('user_id',auth()->id())->first(); 
         $cart_products = null;
+        
         if($cart!=null){
             $cart_products = Cart_Product::where('cart_id',$cart->id)->get();
            

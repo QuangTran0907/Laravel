@@ -1,3 +1,23 @@
+@php
+use App\Models\User;
+use App\Models\Cart_product;
+use App\Models\Cart;
+
+
+    $user = User::find(\auth()->id());
+   
+    $cart = Cart::where('user_id',$user->id)->first();
+    
+    if($cart!=null)
+    {
+        $cart_product = Cart_product::where('cart_id',$cart->id)->get();
+    }else{
+        $cart_product = null;
+    }
+   
+
+
+@endphp
 <header class="header">
   <!-- Topbar - start -->
   <div class="header_top">
@@ -58,7 +78,14 @@
 
                   <li class="topauth">
                     @if (Auth::check())
-                    <a href="/logout">
+                    
+                        @if ($user->role==1)
+                        <a href="/products">
+                            <i class="fa fa-group"></i>
+                        <span class="shop-menu-ttl">Admin</span>
+                        @endif
+                        <a href="/logout">
+
                         <i class="fa fa-sign-out"></i>
                         <span class="shop-menu-ttl">Logout</span>
                     </a>
@@ -79,9 +106,11 @@
                           <a href="/cart">
                               <i class="fa fa-shopping-cart"></i>
                               <span class="shop-menu-ttl">Cart</span>
-                             
-                              
-                              
+                              @if ($cart_product!=null)
+                              (<b>{{  $cart_product->count()}}</b>)
+                              @else
+                              (<b>0</b>)
+                              @endif
                           </a>
                       </div>
                   </li>

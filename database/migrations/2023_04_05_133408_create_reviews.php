@@ -13,16 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('invoices', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('amount');
-            $table->integer('total');
-            $table->integer('status');
             $table->integer('user_id')->unsigned();
-            $table->string('delivery_address');
-            $table->string('sdt');
-
-
+            $table->integer('product_id')->unsigned()->onDelete('cascade');
+            $table->string('review');
+            $table->integer('rating');
             $table->timestamps();
         });
     }
@@ -34,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoices');
+        Schema::dropIfExists('reviews');
     }
 };

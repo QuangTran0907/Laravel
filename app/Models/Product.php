@@ -21,6 +21,9 @@ class Product extends Model
     public function media(){
         return $this->hasMany(Media::class);
     }
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
     public function sizes()
     {
         return $this->belongsToMany(Size::class);

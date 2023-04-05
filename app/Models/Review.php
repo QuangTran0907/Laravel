@@ -5,20 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Invoice extends Model
+class Review extends Model
 {
     use HasFactory;
-    protected $table = 'invoices';
+    protected $table = 'reviews';
     protected $primaryKey = 'id';
     public $timeStamps = true;
-    protected $fillable = ['amount','user_id','total','status','delivery_address','sdt'];
-    public function products()
+    protected $fillable = ['user_id','product_id','review','rating','created_at'];
+    public function product()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsTo(Product::class);
     }
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-
 }

@@ -11,6 +11,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\Models\Temp_Cart;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 
 class CartController extends Controller
 {
@@ -112,37 +113,55 @@ class CartController extends Controller
             'sdt' => $request->input('phoneNumber'),
             'amount' => $cart_products->count(),
             'total' => $request->input('total'),
-            'status' => 0
+            'status' => 0,
+            'user_id' => auth()->id()
         
         ]);
+        
         $invoice->save();
-            foreach ($cart_products as $item) {
-                $invoice_product = Invoice_Product::create([
-                    'invoice_id' => $invoice->id,
-                    'product_id' => $item->product_id,
-                    'amount' => $item->amount
-                ]);
-                $invoice_product->save();
-                
+        foreach ($cart_products as $item) {
+            $invoice_product = Invoice_Product::create([
+                'invoice_id' => $invoice->id,
+                'product_id' => $item->product_id,
+                'amount' => $item->amount
+            ]);
+            $invoice_product->save();
+            
 
-            } 
+        } 
+       
+        $invoice_product = Invoice_Product::where('invoice_id',$invoice->id)->get();
+       $mail = $invoice->user->email;
+        Mail::send('web.email', compact('invoice','invoice_product'), function($messges) use ($mail){
+            $messges->from('tranhuuquang2k1@gmail.com', 'AllStore');
+            $messges->to($mail, $mail);
+            $messges->subject('THÔNG BÁO ĐƠN HÀNG TẠI ALLSTORE');
+        });
 
-            $cart->delete();
-            foreach($cart_products as $item){
-                $item->delete();
+        $cart->delete();
+        foreach($cart_products as $item){
+            $item->delete();
 
-            }
+        }
            
 
             return redirect()->action([WebController::class, 'web_index']);
+
+
                 
-               
+             
              
        
 
         
     }
+    public function mail() {
+        $invoice = Invoice::first();
+        $invoice_product = Invoice_Product::where('invoice_id',$invoice->id)->get();
 
+        return view('web.email', compact('invoice','invoice_product'));
+        
+    }
    
     
 }

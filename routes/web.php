@@ -50,6 +50,9 @@ Route::middleware('checklogin')->group(function(){
     Route::get("logout",[AuthController::class, 'logout']);
     Route::get("profile",[AuthController::class, 'showProfile']);
     Route::post("profile",[AuthController::class, 'updateProfile']);
+    Route::post("review/{id}",[WebController::class, 'review']);
+
+
 
 });
 
@@ -57,6 +60,7 @@ Route::middleware('checklogin')->group(function(){
     Route::resource('/products',ProductController::class)->middleware('checkrole');
     Route::get('/products/edit/add_image/{id}',[ProductController::class, 'add_image'])->middleware('checkrole');
     Route::post('/products/save_media/{id}',[ProductController::class, 'save_media'])->middleware('checkrole');
+    Route::get('test',[CartController::class, 'mail']);
 
 
 
